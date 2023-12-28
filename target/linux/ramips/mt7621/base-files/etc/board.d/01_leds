@@ -119,6 +119,10 @@ netgear,wax202)
 	ucidef_set_led_netdev "lan2" "LAN2" "green:lan2" "lan2"
 	ucidef_set_led_netdev "lan3" "LAN3" "green:lan3" "lan3"
 	;;
+notion,r281)
+	ucidef_set_led_netdev "lan" "lan" "white:lan" "br-lan" "link"
+	ucidef_set_led_netdev "wwan" "wwan" "white:wwan" "eth1" "link tx rx"
+	;;
 oraybox,x3a)
 	ucidef_set_led_netdev "wan" "wan link" "red:status" "wan"
 	ucidef_set_led_netdev "lan" "lan link" "green:status" "br-lan"
