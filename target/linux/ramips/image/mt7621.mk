@@ -2333,6 +2333,20 @@ define Device/netis_wf2881
 endef
 TARGET_DEVICES += netis_wf2881
 
+define Device/notion_r281
+  $(Device/nand)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 129280k
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi | \
+	check-size
+  DEVICE_VENDOR := Notion
+  DEVICE_MODEL := R281
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7663-firmware-ap \
+	kmod-usb3 kmod-usb-net-rndis kmod-usb-acm comgt-ncm -uboot-envtools
+endef
+TARGET_DEVICES += notion_r281
+
 define Device/openfi_5pro
   $(Device/dsa-migration)
   IMAGE_SIZE := 65216k
