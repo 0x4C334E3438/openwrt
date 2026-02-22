@@ -2457,6 +2457,30 @@ define Device/openfi_5pro
 endef
 TARGET_DEVICES += openfi_5pro
 
+define Device/notion_r2x1
+  $(Device/nand)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 128768k
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi | \
+	check-size
+  DEVICE_VENDOR := Notion
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7663-firmware-ap \
+	kmod-usb3 kmod-usb-net-rndis comgt-ncm -uboot-envtools
+endef
+
+define Device/notion_r281
+  $(Device/notion_r2x1)
+  DEVICE_MODEL := R281
+endef
+TARGET_DEVICES += notion_r281
+
+define Device/notion_r291
+  $(Device/notion_r2x1)
+  DEVICE_MODEL := R291
+endef
+TARGET_DEVICES += notion_r291
+
 define Device/oraybox_x3a
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
