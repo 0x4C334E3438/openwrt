@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#include "mt7621_notion_r2x1.dtsi"
+
+/ {
+	compatible = "notion,r281", "mediatek,mt7621-soc";
+	model = "Notion R281";
+};
+
+&leds {
+	lan {
+		color = <LED_COLOR_ID_WHITE>;
+		function = LED_FUNCTION_LAN;
+		gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+	};
+};
