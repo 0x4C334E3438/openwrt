@@ -186,6 +186,11 @@ netgear,wax202)
 netis,n6)
 	ucidef_set_led_netdev "wan" "wan" "green:wan" "wan" "link tx rx"
 	;;
+notion,r281|\
+notion,r291)
+	ucidef_set_led_netdev "lan" "lan" "white:lan" "br-lan" "link"
+	ucidef_set_led_netdev "wan" "lan" "white:wan" "eth1" "link"
+	;;
 oraybox,x3a)
 	ucidef_set_led_netdev "wan" "wan link" "red:status" "wan"
 	ucidef_set_led_netdev "lan" "lan link" "green:status" "br-lan"
